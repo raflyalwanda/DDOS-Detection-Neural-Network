@@ -1,0 +1,11 @@
+ratarata = mean(DDoS27(:,4));
+dataLatihDDoS(1,26) = ratarata;
+jumlahPaket = size(DDoS27,1);
+dataLatihDDoS(2,26) = jumlahPaket;
+A = ((DDoS27(:,1)-300).^2);
+dataLatihDDoS(3,26) = sqrt(sum(A(:,1))/jumlahPaket);
+B = (DDoS27(:,4) - ratarata).^2;
+dataLatihDDoS(4,26) = sqrt(sum(B(:,1))/jumlahPaket);
+dataLatihDDoS(5,26) = jumlahPaket * (1/(DDoS27(jumlahPaket,1) - DDoS27(1,1)));
+jumlahByte = sum(DDoS27(:,4));
+dataLatihDDoS(6,26) = sum(DDoS27(:,4)) * 8;
